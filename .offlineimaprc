@@ -1,0 +1,17 @@
+[general]
+accounts = kovalyshyn
+
+[Account kovalyshyn]
+localrepository = kovalyshyn-local
+remoterepository = kovalyshyn-remote
+
+[Repository kovalyshyn-local]
+type = Maildir
+localfolders = ~/.mail
+
+[Repository kovalyshyn-remote]
+type = IMAP
+remotehost = mx.com
+remoteuser = v@kovalyshyn.pp.ua
+remotepass = my_pass
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt

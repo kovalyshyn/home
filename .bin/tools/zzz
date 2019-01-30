@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mpc pause-if-playing
+slock &
+sudo systemctl hibernate

@@ -1,0 +1,24 @@
+http://itc.ua/feed "tech"
+https://www.ixbt.com/export/news.rss "tech"
+https://rock.ua/rss.php "music"
+https://nv.ua/rss/2283.xml "news" "ukraine"
+https://zaxid.net/rss/16.xml "news" "lviv"
+https://freeswitch.com/index.php/feed/ "voip"
+https://www.linuxjournal.com/news/feed "linux"
+https://www.archlinux.org/feeds/news/ "linux"
+---------------BLOGs---------------
+http://lukesmith.xyz/rss.xml "linux" "tech" "blog"
+https://www.kovalyshyn.pp.ua/feed.xml "tech" "linux" "blog"
+http://lleo.me/dnevnik/rss.xml "blog"
+---------------LIBRARY-------------
+https://www.hurtom.com/portal/feed "movies"
+http://chtyvo.org.ua/feed/books.rss "books"
+http://flibusta.is/new/rss "books"
+http://lib.rus.ec/new/opds "books"
+---------------YOUTUBE-------------
+https://podsync.net/GF91RfcV3 "tech" "linux"
+https://podsync.net/89b74qcVm "tech" "linux"
+https://podsync.net/2A5E4fc9m "tech" "linux"
+https://podsync.net/5ORRRfc93 "tech" "bsd"
+---------------PODCAST-------------
+http://feeds.soundcloud.com/users/soundcloud:users:24460552/sounds.rss "tech"

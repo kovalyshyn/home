@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pkill -f /dev/video || setsid mpv --geometry=-0-0 --autofit=25% /dev/video0 &

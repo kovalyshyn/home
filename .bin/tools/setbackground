@@ -1,0 +1,10 @@
+#!/bin/bash
+if ! [ -x "$(command -v feh)" ]
+then
+    xsetroot -solid "#1d2021"
+    exit 0
+fi
+
+[[ -f ~/.images/bg.png ]] && feh --bg-scale "$HOME/.images/bg.png" && exit 0
+[[ -f ~/.images/bg.jpg ]] && feh --bg-scale "$HOME/.images/bg.jpg" && exit 0
+

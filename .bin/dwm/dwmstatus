@@ -1,0 +1,26 @@
+#!/bin/bash
+
+BATT0="$(cat /sys/class/power_supply/BAT0/capacity)%"
+BATT1="$(cat /sys/class/power_supply/BAT1/capacity)%"
+#BATTWATT="$((`cat /sys/class/power_supply/BAT1/voltage_now` * `cat /sys/class/power_supply/BAT1/current_now` / (10**12)))W"
+CPU="$(top -bn1 | grep 'Cpu(s)' | sed 's/.*, *\([0-9.]*\)%* id.*/\1/' | awk '{print 100 - $1"%"}')"
+MEM="$(free -h |  awk '{if (NR==2) {print $3}}')"
+TEMP="$(( `cat /sys/class/thermal/thermal_zone0/temp` / 1000 ))°C"
+XKBL="$(xkblayout-state print %s | awk '{print toupper($0)}')"
+MPC="$(mpc status | tr '\n' ' ' | grep -Po '.*(?=\[playing\])|paused' | tr -d '\n')"
+#MPC="$(mpc status | tr '\n' ' ' | sed 's/\(^.*\)volume.*/\1/; s/\#.*\///')"
+LOCALTIME="$(date '+%b %d (%a) %R')"
+
+pastatusvol() {
+    [[ $(pamixer --get-mute) = "true" ]] && echo v:0% && exit
+    echo v:$(pamixer --get-volume)% ;
+}
+
+pastatusmic() {
+    [[ $(pamixer --default-source --get-mute) = "true" ]] && echo m:0% && exit
+    echo m:$(pamixer --default-source  --get-volume)% ;
+}
+
+xsetroot -name "$MPC| $CPU $MEM $TEMP | $BATT0 $BATT1 | $(pastatusvol) $(pastatusmic) | $LOCALTIME [$XKBL]"
+
+exit 0

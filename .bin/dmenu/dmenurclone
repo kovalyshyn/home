@@ -1,0 +1,27 @@
+#!/bin/bash
+
+chosen=$(printf "Up\\nDown" | dmenu -i -p "rclone sync: $1" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+
+[ "$chosen" != "" ] || exit
+
+case $chosen in
+    "Up")
+        pgrep -x dunst >/dev/null && notify-send "Uploading..." &
+        rclone sync ~/Documents dropbox:Documents
+        rclone sync ~/.newsboat dropbox:.newsboat
+        rclone sync ~/.local/share/keyrings dropbox:keyrings
+        rclone sync ~/Lib B2:kovalyshyn
+        ;;
+    "Down")
+        pgrep -x dunst >/dev/null && notify-send "Downloading..." &
+        rclone sync dropbox:Documents ~/Documents
+        rclone sync dropbox:.newsboat ~/.newsboat
+        rclone sync dropbox:keyrings ~/.local/share/keyrings
+        rclone sync dropbox:Apps/Unclutter\ Notes/Unclutter\ Notes ~/Notes
+        rclone sync B2:kovalyshyn ~/Lib
+        ;;
+esac
+
+pgrep -x dunst >/dev/null && notify-send "Done!" &
+
+exit 0

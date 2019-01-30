@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+
+case $BLOCK_BUTTON in
+    1) pgrep -x dunst >/dev/null && notify-send "Top10 CPU usage
+
+$(ps -axch -o cmd:20,%cpu --sort -%cpu | head)";;
+esac
+
+sensors | awk '/^CPU/ {print $2}'

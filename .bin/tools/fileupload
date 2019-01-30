@@ -1,0 +1,27 @@
+#!/bin/sh
+
+url="http://pub.webitel.com"
+
+if [ "${1}" ]; then
+    chosen=${1}
+else
+    command -v dmenu >/dev/null && chosen=$(find ~/ -not -path '*/\.*' -type f -printf "%Cy%Cm%Cd%CH%CM %p\n" | sort -nr | sed "s/^[[:digit:]]\+ //" | dmenu -i -l 20) || exit 1
+fi
+
+[ "$chosen" != "" ] || exit 1
+[ -f "$chosen" ] || exit 1
+
+path=$(file -b --mime-type "$chosen")
+bname=$(basename "$chosen")
+fname=$(LC_CTYPE=C tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1).${bname##*.}
+
+ssh -p 44022 upld@cloud-ams1.webitel.com "/bin/sh -c 'mkdir -p ~/pub/'${path}'/'"
+scp -P 44022 -q "$chosen" upld@cloud-ams1.webitel.com:~/pub/$path/$fname
+
+msg="uploaded: $url/$path/$fname"
+pgrep -x dunst >/dev/null && notify-send "$msg" || echo "$msg"
+
+command -v pbcopy >/dev/null && echo $url/$path/$fname | pbcopy
+command -v xclip >/dev/null && echo $url/$path/$fname | xclip -selection clipboard
+
+exit 0

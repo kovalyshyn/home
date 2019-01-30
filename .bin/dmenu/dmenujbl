@@ -1,0 +1,20 @@
+#!/bin/bash
+
+chosen=$(printf "Off\\nOn" | dmenu -i -p "JBL: $1" -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+
+[ "$chosen" != "" ] || exit
+
+case $chosen in
+    "On")
+        message=$(bluetoothctl power on)
+        pgrep -x dunst >/dev/null && notify-send "$message" &
+        message=$(bluetoothctl connect B8:D5:0B:E5:1A:B6)
+        ;;
+    "Off")
+        message=$(bluetoothctl power off)
+        ;;
+esac
+
+pgrep -x dunst >/dev/null && notify-send "$message" &
+
+exit 0

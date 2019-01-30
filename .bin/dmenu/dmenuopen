@@ -1,0 +1,8 @@
+#!/bin/sh
+
+chosen=$(find ~/Desktop ~/Downloads ~/Pictures -type f -printf "%Cy%Cm%Cd%CH%CM %p\n" | sort -nr | sed "s/^[[:digit:]]\+ //" | dmenu -i -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+0
+
+[ "$chosen" != "" ] || exit
+
+xdg-open "$chosen"

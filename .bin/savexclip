@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo $(xclip -o) >> ~/.xclip_history
+echo $(xclip -o -sel clip) >> ~/.xclip_history
+sed -n '/^\s*$/d; G; s/\n/&&/; /^\([ -~]*\n\).*\n\1/d; s/\n//; h; P' -i ~/.xclip_history
+
+notify-send "'$(xclip -o -sel clip)' saved." &

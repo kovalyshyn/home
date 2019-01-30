@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+
+case $BLOCK_BUTTON in
+    1) pgrep -x dunst >/dev/null && notify-send "Top10 memory usage
+
+$(ps -axch -o cmd:20,%mem --sort -%mem | head)";;
+esac
+
+free -h | awk '/^Mem/ {print $3 "/" $2}'

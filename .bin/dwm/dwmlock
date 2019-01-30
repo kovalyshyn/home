@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mpc pause-if-playing
+xdotool key 105+62
+slock &
+sleep 5 \
+    && [ 4000 -lt "$(xssstate -i)" ] \
+    && pgrep -x slock \
+    && xset dpms force off \
+    && sleep 180 \
+    && [ 120000 -lt "$(xssstate -i)" ] \
+    && pgrep -x slock \
+    && sudo systemctl suspend-then-hibernate

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+chosen=$(printf "search\\nbookmarks\\nhistory" | dmenu -i -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019" -p "surf:")
+
+[ "$chosen" != "" ] || exit
+
+case ${chosen} in
+    search )
+        q=$(echo "DuckDuckGo" | dmenu -i -p "$1" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+        setsid surf https://duckduckgo.com/?q="${q}" >/dev/null 2>&1 &
+        exit 0 ;;
+    history )
+        url=$(cat ~/.surf/history.txt | dmenu -i -p "history: $1" -l 20 -fn "Mono:size=12" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019") ;;
+    bookmarks )
+        chosen=$(find ~/Documents/99_links -type f -printf "%Cy%Cm%Cd%CH%CM %p\n" | sort -nr | sed "s/^[[:digit:]]\+ \/.*\///; s/.md$//" | dmenu -i -p "bookmarks: $1" -l 20 -fn "Mono:size=12" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+        url=$(grep "http" ~/Documents/99_links/"${chosen}".md);;
+    * )
+        url="${chosen}"
+        echo ${url} >> ~/.surf/history.txt
+        sed -n '/^\s*$/d; G; s/\n/&&/; /^\([ -~]*\n\).*\n\1/d; s/\n//; h; P' -i ~/.surf/history.txt ;;
+esac
+
+[ "$url" != "" ] || exit 0
+
+setsid surf $url >/dev/null 2>&1 &
+
+exit 0

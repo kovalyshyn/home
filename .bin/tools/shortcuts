@@ -1,0 +1,8 @@
+#!/bin/bash
+shell_shortcuts="$HOME/.shortcuts"
+ranger_shortcuts="$HOME/.config/ranger/shortcuts.conf"
+
+rm -f "$ranger_shortcuts" "$shell_shortcuts" 2>/dev/null
+
+sed "s/\s*#.*$//;/^\s*$/d" "$HOME/.bmdirs" | tee >(awk '{print "alias "$1"=\"cd "$2" && ls -a\""}' >> "$shell_shortcuts") \
+    | awk '{print "map g"$1" cd "$2"\nmap t"$1" tab_new "$2"\nmap m"$1" shell mv -v %s "$2"\nmap Y"$1" shell cp -rv %s "$2}' >> "$ranger_shortcuts"

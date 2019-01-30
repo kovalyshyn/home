@@ -1,0 +1,3 @@
+#!/bin/sh
+
+pgrep ncpamixer || setsid st -n ncpamixer -f mono:pixelsize=18 ncpamixer &

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Surf Web Browser
+Exec=/usr/bin/surf %u

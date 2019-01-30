@@ -1,0 +1,3 @@
+#!/bin/sh
+
+pgrep ncmpcpp || setsid st -n ncmpcpp -g 93x31 -f mono:pixelsize=18 ncmpcpp &

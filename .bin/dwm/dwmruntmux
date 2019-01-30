@@ -1,0 +1,4 @@
+#!/bin/sh
+# the dropdown terminal or log into a previous session.
+
+pgrep tmuxdd || st -n tmuxdd -g 93x31 tmuxdd

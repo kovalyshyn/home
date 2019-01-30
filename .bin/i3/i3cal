@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+date_time=$(date '+%a %d-%m %R')
+
+case $BLOCK_BUTTON in
+    1) pgrep -x dunst >/dev/null && notify-send "`calcurse -d 1`";;
+    2) calcurse-caldav --init=keep-remote >/dev/null && pgrep -x dunst >/dev/null && notify-send "Your calendar was updated.";;
+    3) pgrep -x dunst >/dev/null && notify-send "`cal -1`";;
+esac
+
+echo $date_time
