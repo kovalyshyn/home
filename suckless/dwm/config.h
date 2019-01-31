@@ -33,13 +33,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title    tags mask  iscentered isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       1 << 4,     0,       1,      -1 },
+	{ "Gimp",     NULL,       NULL,       1 << 4,     1,       1,      -1 },
 	{ "Skype",    NULL,       NULL,       1 << 1,     0,       0,      -1 },
-	{ "TelegramDesktop", NULL, NULL,      1 << 1,     0,       0,      -1 },
+	{ "linphone", NULL,       NULL,            0,     1,       1,      -1 },
 	{ "webitel-phone",   NULL, NULL,           0,     1,       1,      -1 },
-	{ NULL,      "tmuxdd",    NULL,            0,     1,       1,      -1 },
-	{ NULL,      "pamixer",   NULL,            0,     1,       1,      -1 },
-	{ NULL,      "ncmpcpp",   NULL,            0,     1,       1,      -1 },
+	{ "TelegramDesktop", NULL, NULL,      1 << 1,     0,       0,      -1 },
+	{ NULL,       NULL,     "tmuxdd",          0,     1,       1,      -1 },
+	{ NULL,       NULL,    "pamixer",          0,     1,       1,      -1 },
+	{ NULL,       NULL,    "ncmpcpp",          0,     1,       1,      -1 },
 	{ NULL, "transmission-gtk", NULL,          0,     0,       1,      -1 },
 	{ NULL,     NULL, "video0 - mpv",          0,     0,       1,      -1 },
 };
@@ -70,7 +71,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_black, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "xterm", NULL };
 static const char *vold[] = { "pamixer", "-d", "5", NULL };
 static const char *volu[] = { "pamixer", "-i", "5", NULL };
 static const char *mute[] = { "pamixer", "-t", NULL };
