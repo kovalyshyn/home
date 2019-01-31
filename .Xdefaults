@@ -19,16 +19,16 @@
 *.background: #1d2021
 *.termName: xterm-256color
 XTerm*cursorBlink: true
-XTerm*cursorColor: darkorange1
+XTerm*cursorColor: darkorange3
 XTerm*renderFont: true
 XTerm*faceName: FuraCode Nerd Font Mono
-XTerm*faceSize: 12
-XTerm*faceSize1: 8
-XTerm*faceSize2: 10
-XTerm*faceSize3: 12
-XTerm*faceSize4: 14
-XTerm*faceSize5: 16
-XTerm*faceSize6: 18
+XTerm*faceSize: 14
+XTerm*faceSize1: 10
+XTerm*faceSize2: 12
+XTerm*faceSize3: 14
+XTerm*faceSize4: 16
+XTerm*faceSize5: 18
+XTerm*faceSize6: 20
 XTerm*saveLines: 10000
 XTerm*highlightSelection: true
 XTerm*metaSendsEscape:  true
