@@ -7,7 +7,6 @@ sleep 5 \
     && [ 4000 -lt "$(xssstate -i)" ] \
     && pgrep -x slock \
     && xset dpms force off \
-    && sleep 180 \
-    && [ 120000 -lt "$(xssstate -i)" ] \
+    && sleep 120 \
     && pgrep -x slock \
     && sudo systemctl suspend-then-hibernate

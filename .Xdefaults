@@ -15,7 +15,29 @@
 *.color13: #d3869b
 *.color14: #8ec07c
 *.color15: #ebdbb2
-!! Transparency (0-255):
-!!*.alpha: 230
-!! Set a default font and font size as below:
-!!*.font: FuraCode Nerd Font Mono:pixelsize=16:antialias=true:autohint=true;
+*.foreground: #d5c4a1
+*.background: #1d2021
+*.termName: xterm-256color
+XTerm*cursorBlink: true
+XTerm*cursorColor: darkorange1
+XTerm*renderFont: true
+XTerm*faceName: FuraCode Nerd Font Mono
+XTerm*faceSize: 12
+XTerm*faceSize1: 8
+XTerm*faceSize2: 10
+XTerm*faceSize3: 12
+XTerm*faceSize4: 14
+XTerm*faceSize5: 16
+XTerm*faceSize6: 18
+XTerm*saveLines: 10000
+XTerm*highlightSelection: true
+XTerm*metaSendsEscape:  true
+XTerm*altSendsEscape: true
+*VT100*translations:    #override \n\
+       <Btn4Down>,<Btn4Up>: string("") \n\
+       <Btn5Down>,<Btn5Up>: string("") \n\
+       Ctrl<Key>=: larger-vt-font() \n\
+       Ctrl<Key>-: smaller-vt-font() \n\
+       Alt<Key>C: copy-selection(CLIPBOARD) \n\
+       Alt<Key>V: insert-selection(CLIPBOARD) \n\
+       <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
