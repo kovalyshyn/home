@@ -101,7 +101,7 @@ gcr
 gdbm
 gdk-pixbuf2
 gegl
-geoclue2
+geoclue
 geocode-glib
 geoip
 geoip-database
@@ -112,6 +112,7 @@ giflib
 gimp
 girara
 git
+glew
 glib-networking
 glib2
 glibc
@@ -343,6 +344,7 @@ libid3tag
 libidn
 libidn2
 libiec61883
+libimagequant
 libinput
 libixion
 libjpeg-turbo
@@ -415,6 +417,7 @@ libsoup
 libsoxr
 libspectre
 libspiro
+libsrtp
 libssh
 libssh2
 libstaroffice
@@ -453,6 +456,7 @@ libwpg
 libwps
 libx11
 libxau
+libxaw
 libxcb
 libxcomposite
 libxcursor
@@ -504,6 +508,7 @@ m4
 make
 man-db
 man-pages
+mbedtls
 mdadm
 mediainfo
 mesa
@@ -521,6 +526,7 @@ mpv
 msgpack-c
 msmtp
 mtdev
+mtr
 mypaint-brushes
 nano
 ncmpcpp
@@ -584,6 +590,7 @@ perl-xml-sax-base
 pinentry
 pixman
 pkgconf
+pngquant
 polkit
 poppler
 poppler-data
@@ -617,7 +624,13 @@ python2-gobject2
 python2-six
 qpdf
 qt5-base
+qt5-declarative
+qt5-graphicaleffects
 qt5-imageformats
+qt5-quickcontrols
+qt5-quickcontrols2
+qt5-svg
+qt5-tools
 r
 raptor
 rasqal
@@ -705,6 +718,7 @@ wpa_supplicant
 x264
 x265
 xapian-core
+xbitmaps
 xcb-proto
 xcb-util
 xcb-util-image
@@ -714,6 +728,7 @@ xcb-util-wm
 xclip
 xdg-utils
 xdotool
+xerces-c
 xf86-input-libinput
 xf86-input-synaptics
 xf86-video-intel
@@ -724,6 +739,7 @@ xorg-bdftopcf
 xorg-font-util
 xorg-font-utils
 xorg-fonts-encodings
+xorg-luit
 xorg-mkfontdir
 xorg-mkfontscale
 xorg-server
@@ -742,7 +758,9 @@ xorg-xset
 xorg-xsetroot
 xorg-xwininfo
 xorgproto
+xsd
 xssstate
+xterm
 xvidcore
 xz
 yajl
@@ -757,4 +775,5 @@ zita-alsa-pcmi
 zita-resampler
 zlib
 zstd
+zxing-cpp
 zziplib

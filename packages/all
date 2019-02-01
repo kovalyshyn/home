@@ -25,6 +25,12 @@ babl
 bash
 bash-completion
 bc
+bcg729-git
+bcmatroska2-git
+bctoolbox-git
+belcard-git
+belle-sip-git
+belr-git
 bind-tools
 binutils
 bison
@@ -35,6 +41,7 @@ bluez-utils
 boost-libs
 brotli
 bzip2
+bzrtp-git
 c-ares
 ca-certificates
 ca-certificates-mozilla
@@ -103,7 +110,7 @@ gcr
 gdbm
 gdk-pixbuf2
 gegl
-geoclue2
+geoclue
 geocode-glib
 geoip
 geoip-database
@@ -114,6 +121,7 @@ giflib
 gimp
 girara
 git
+glew
 glib-networking
 glib2
 glibc
@@ -314,6 +322,7 @@ libcups
 libdaemon
 libdatrie
 libde265
+libdecaf
 libdmx
 libdrm
 libdvdnav
@@ -348,6 +357,7 @@ libid3tag
 libidn
 libidn2
 libiec61883
+libimagequant
 libinput
 libixion
 libjpeg-turbo
@@ -420,6 +430,7 @@ libsoup
 libsoxr
 libspectre
 libspiro
+libsrtp
 libssh
 libssh2
 libstaroffice
@@ -458,6 +469,7 @@ libwpg
 libwps
 libx11
 libxau
+libxaw
 libxcb
 libxcomposite
 libxcursor
@@ -490,6 +502,9 @@ libxxf86vm
 libzen
 libzmf
 licenses
+lime-git
+linphone-desktop-git
+linphone-git
 linux
 linux-api-headers
 linux-firmware
@@ -509,11 +524,14 @@ m4
 make
 man-db
 man-pages
+mbedtls
 mdadm
 mediainfo
+mediastreamer-git
 mesa
 metis
 minizip
+minizip2-2.3.3
 mkinitcpio
 mkinitcpio-busybox
 mobile-broadband-provider-info
@@ -526,6 +544,7 @@ mpv
 msgpack-c
 msmtp
 mtdev
+mtr
 mypaint-brushes
 nano
 ncmpcpp
@@ -541,6 +560,7 @@ netctl
 nettle
 network-manager-applet
 networkmanager
+networkmanager-fortisslvpn-git
 networkmanager-pptp
 networkmanager-vpnc
 newsboat
@@ -555,6 +575,7 @@ oniguruma
 openal
 opencore-amr
 openexr
+openfortivpn
 openjpeg2
 openresolv
 openssh
@@ -563,6 +584,7 @@ openssl-1.0
 opus
 opusfile
 orc
+ortp-git
 p11-kit
 p7zip
 pacman
@@ -591,6 +613,7 @@ perl-xml-sax-base
 pinentry
 pixman
 pkgconf
+pngquant
 polkit
 poppler
 poppler-data
@@ -624,13 +647,20 @@ python2-gobject2
 python2-six
 qpdf
 qt5-base
+qt5-declarative
+qt5-graphicaleffects
 qt5-imageformats
+qt5-quickcontrols
+qt5-quickcontrols2
+qt5-svg
+qt5-tools
 r
 raptor
 rasqal
 rclone
 readline
 redland
+redshift-minimal
 reiserfsprogs
 remmina
 rest
@@ -650,6 +680,7 @@ skypeforlinux-stable-bin
 slang
 slock-gruvbox-lowcontrast
 smbclient
+soci-git
 sound-theme-freedesktop
 sox
 speex
@@ -719,6 +750,7 @@ wpa_supplicant
 x264
 x265
 xapian-core
+xbitmaps
 xcb-proto
 xcb-util
 xcb-util-image
@@ -728,6 +760,7 @@ xcb-util-wm
 xclip
 xdg-utils
 xdotool
+xerces-c
 xf86-input-libinput
 xf86-input-synaptics
 xf86-video-intel
@@ -739,6 +772,7 @@ xorg-bdftopcf
 xorg-font-util
 xorg-font-utils
 xorg-fonts-encodings
+xorg-luit
 xorg-mkfontdir
 xorg-mkfontscale
 xorg-server
@@ -758,8 +792,9 @@ xorg-xsetroot
 xorg-xwininfo
 xorgproto
 xrectsel
+xsd
 xssstate
-xurls
+xterm
 xvidcore
 xz
 yajl
@@ -775,4 +810,5 @@ zita-alsa-pcmi
 zita-resampler
 zlib
 zstd
+zxing-cpp
 zziplib
