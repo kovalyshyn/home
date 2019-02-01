@@ -33,6 +33,8 @@ XTerm*saveLines: 10000
 XTerm*highlightSelection: true
 XTerm*metaSendsEscape:  true
 XTerm*altSendsEscape: true
+XTerm*loginshell: true
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 *VT100*translations:    #override \n\
        <Btn4Down>,<Btn4Up>: string("") \n\
        <Btn5Down>,<Btn5Up>: string("") \n\

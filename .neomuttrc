@@ -1,5 +1,5 @@
 # settings
-set editor="vim"
+set editor="nvim"
 set from="v@kovalyshyn.pp.ua"
 set realname="Vitaly Kovalyshyn"
 set sendmail="/usr/bin/msmtp"
