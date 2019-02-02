@@ -21,8 +21,8 @@
 XTerm*cursorBlink: true
 XTerm*cursorColor: darkorange3
 XTerm*renderFont: true
-XTerm*faceName: FuraCode Nerd Font Mono
-XTerm*faceSize: 14
+XTerm*faceName: Mono
+XTerm*faceSize: 12
 XTerm*faceSize1: 10
 XTerm*faceSize2: 12
 XTerm*faceSize3: 14

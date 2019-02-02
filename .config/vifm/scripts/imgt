@@ -4,7 +4,7 @@
 
 W3MIMGDISPLAY="/usr/lib/w3m/w3mimgdisplay"
 FONTH=15 # Size of one terminal row
-FONTW=13 # Size of one terminal column
+FONTW=11 # Size of one terminal column
 
 X=$1
 Y=$2
