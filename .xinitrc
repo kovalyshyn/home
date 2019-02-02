@@ -13,6 +13,7 @@ nm-applet &
 unclutter &
 dunst &
 mpd &
+redshift &
 setbackground &
 setscreenlayout &
 
