@@ -316,10 +316,10 @@ filetype *.ftp
        \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
 
 " Office files
-filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f &
+filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.ods,*.pptx libreoffice %f &
 fileviewer *.doc catdoc %c
 fileviewer *.docx docx2txt %f -
-fileviewer *.xls,*.xlsx file %c
+fileviewer *.xls,*.xlsx,*.ods file %c
 
 " PCAP files
 filetype *.pcap wireshark-gtk %f

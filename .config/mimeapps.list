@@ -23,6 +23,7 @@ application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 application/epub+zip=zathura.desktop
 application/msword=libreoffice.desktop;
 application/vnd.ms-excel=libreoffice.desktop;
+application/vnd.oasis.opendocument.spreadsheet=libreoffice.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.slideshow=libreoffice.desktop;
 application/vnd.openxmlformats-officedocument.presentationml.template=libreoffice.desktop;
