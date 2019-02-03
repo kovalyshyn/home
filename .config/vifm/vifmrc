@@ -328,19 +328,22 @@ filextype */
 " Explicitly set highlight type for some extensions
 "
 " 256-color terminal
-fileviewer *.[ch],*.[ch]pp highlight -O xterm256 -s dante --syntax c %c
-fileviewer Makefile,Makefile.* highlight -O xterm256 -s dante --syntax make %c
-fileviewer *.md,*.markdown highlight -O xterm256 -s dante --syntax markdown %c
-fileviewer *.css highlight -O xterm256 -s dante --syntax css %c
-fileviewer *.js highlight -O xterm256 -s dante --syntax js %c
-fileviewer *.py highlight -O xterm256 -s dante --syntax python %c
-fileviewer *.sh highlight -O xterm256 -s dante --syntax bash %c
-fileviewer *.bat highlight -O xterm256 -s dante --syntax bat %c
-fileviewer *.html highlight -O xterm256 -s dante --syntax html %c
-fileviewer *.json highlight -O xterm256 -s dante --syntax json %c
+fileviewer *.[ch],*.[ch]pp highlight -O xterm256 -s solarized-dark --syntax c %c
+fileviewer Makefile,Makefile.* highlight -O xterm256 -s solarized-dark --syntax make %c
+fileviewer *.md,*.markdown highlight -O xterm256 -s solarized-dark --syntax markdown %c
+fileviewer *.go highlight -O xterm256 -s solarized-dark --syntax go %c
+fileviewer *.css highlight -O xterm256 -s solarized-dark --syntax css %c
+fileviewer *.js highlight -O xterm256 -s solarized-dark --syntax js %c
+fileviewer *.py highlight -O xterm256 -s solarized-dark --syntax python %c
+fileviewer *.sh highlight -O xterm256 -s solarized-dark --syntax bash %c
+fileviewer *.bat highlight -O xterm256 -s solarized-dark --syntax bat %c
+fileviewer *.xml highlight -O xterm256 -s solarized-dark --syntax xml %c
+fileviewer *.yml,*.yaml highlight -O xterm256 -s solarized-dark --syntax yaml %c
+fileviewer *.html highlight -O xterm256 -s solarized-dark --syntax html %c
+fileviewer *.json highlight -O xterm256 -s solarized-dark --syntax json %c
 "
 " 16-color terminal
-" fileviewer *.c,*.h highlight -O ansi -s dante %c
+" fileviewer *.c,*.h highlight -O ansi -s solarized-dark %c
 "
 " Or leave it for automatic detection
 "
