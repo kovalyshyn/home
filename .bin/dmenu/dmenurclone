@@ -9,6 +9,8 @@ case $chosen in
         pgrep -x dunst >/dev/null && notify-send "Uploading..." &
         rclone sync ~/Documents dropbox:Documents
         rclone sync ~/.newsboat dropbox:.newsboat
+        rclone copy ~/.surf/cookies.txt dropbox:.surf/
+        rclone copy ~/.surf/history.txt dropbox:.surf/
         rclone sync ~/.local/share/keyrings dropbox:keyrings
         rclone sync ~/Lib B2:kovalyshyn
         ;;
@@ -16,6 +18,8 @@ case $chosen in
         pgrep -x dunst >/dev/null && notify-send "Downloading..." &
         rclone sync dropbox:Documents ~/Documents
         rclone sync dropbox:.newsboat ~/.newsboat
+        rclone copy dropbox:.surf/cookies.txt ~/.surf/cookies.txt
+        rclone copy dropbox:.surf/history.txt ~/.surf/history.txt
         rclone sync dropbox:keyrings ~/.local/share/keyrings
         rclone sync dropbox:Apps/Unclutter\ Notes/Unclutter\ Notes ~/Notes
         rclone sync B2:kovalyshyn ~/Lib
