@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=NeoVim
-Exec=/usr/local/bin/st -e nvim %u
+Exec=/usr/bin/xterm -e nvim %u
