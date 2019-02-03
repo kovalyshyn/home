@@ -500,6 +500,7 @@ libxvmc
 libxxf86dga
 libxxf86vm
 libzen
+libzip
 libzmf
 licenses
 lime-git
@@ -570,6 +571,7 @@ npth
 nspr
 nss
 ntp
+odt2txt
 offlineimap
 oniguruma
 openal
@@ -641,6 +643,7 @@ python-pyparsing
 python-setuptools
 python-six
 python-urwid
+python-xlsx2csv
 python2
 python2-cairo
 python2-gobject2

@@ -316,19 +316,17 @@ filetype *.ftp
        \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
 
 " Office files
-filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.ods,*.pptx libreoffice %f &
-fileviewer *.doc catdoc %c
+filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.ods,*.pptx,*.ppt libreoffice %f &
 fileviewer *.docx docx2txt %f -
-fileviewer *.xls,*.xlsx,*.ods file %c
+fileviewer *.xlsx xlsx2csv %c
+fileviewer *.xls xls2csv %c
+fileviewer *.doc catdoc %c
+fileviewer *.ppt catppt %c
+fileviewer *.odt odt2txt %c
+fileviewer *.ods,*.odp,*.pptx file %c
 
 " PCAP files
 filetype *.pcap wireshark-gtk %f
-
-" TuDu files
-filetype *.tudu tudu -f %c
-
-" Qt projects
-filextype *.pro qtcreator %f &
 
 " Directories
 filextype */

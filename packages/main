@@ -487,6 +487,7 @@ libxvmc
 libxxf86dga
 libxxf86vm
 libzen
+libzip
 libzmf
 licenses
 linux
@@ -549,6 +550,7 @@ npth
 nspr
 nss
 ntp
+odt2txt
 offlineimap
 oniguruma
 openal
