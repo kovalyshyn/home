@@ -1,6 +1,10 @@
 #!/bin/bash
 
-chosen=$(printf "Up\\nDown" | dmenu -i -p "rclone sync: $1" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+if [ "${1}" ]; then
+    chosen=${1}
+else
+    command -v dmenu >/dev/null && chosen=$(printf "Up\\nDown" | dmenu -i -p "rclone sync: $1" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019") || exit 1
+fi
 
 [ "$chosen" != "" ] || exit
 

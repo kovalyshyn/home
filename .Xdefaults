@@ -18,6 +18,12 @@
 *.foreground: #d5c4a1
 *.background: #1d2021
 *.termName: xterm-256color
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.hinting: 0
+Xft.hintstyle: hintnone
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
 XTerm*cursorBlink: true
 XTerm*cursorColor: darkorange3
 XTerm*renderFont: true
