@@ -11,16 +11,21 @@ MPC="$(mpc status | tr '\n' ' ' | grep -Po '.*(?=\[playing\])|paused' | tr -d '\
 #MPC="$(mpc status | tr '\n' ' ' | sed 's/\(^.*\)volume.*/\1/; s/\#.*\///')"
 LOCALTIME="$(date '+%b %d (%a) %R')"
 
+countnewmail() {
+    newmail="$(find ~/.mail/INBOX/new/ -type f  2> /dev/null | wc -l)"
+    [[ $newmail -gt 0 ]] && echo $newmail && exit
+}
+
 pastatusvol() {
     [[ $(pamixer --get-mute) = "true" ]] && echo v:0% && exit
-    echo v:$(pamixer --get-volume)% ;
+    echo v:$(pamixer --get-volume)%;
 }
 
 pastatusmic() {
     [[ $(pamixer --default-source --get-mute) = "true" ]] && echo m:0% && exit
-    echo m:$(pamixer --default-source  --get-volume)% ;
+    echo m:$(pamixer --default-source  --get-volume)%;
 }
 
-xsetroot -name "$MPC| $CPU $MEM $TEMP | $BATT0 $BATT1 | $(pastatusvol) $(pastatusmic) | $LOCALTIME [$XKBL]"
+xsetroot -name "$MPC| $CPU $MEM $TEMP | $BATT0 $BATT1 | $(pastatusmic) $(pastatusvol) | $LOCALTIME [$XKBL] $(countnewmail)"
 
 exit 0

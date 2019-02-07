@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync mail
+RefuseManualStart=no
+RefuseManualStop=yes
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/offlineimap
+
+[Install]
+WantedBy=default.target

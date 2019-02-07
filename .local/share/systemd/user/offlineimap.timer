@@ -1,0 +1,12 @@
+[Unit]
+Description=Sync mail
+RefuseManualStart=no
+RefuseManualStop=no
+
+[Timer]
+OnBootSec=1min
+OnUnitInactiveSec=1m
+Unit=offlineimap.service
+
+[Install]
+WantedBy=default.target
