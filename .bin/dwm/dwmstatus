@@ -13,7 +13,7 @@ LOCALTIME="$(date '+%b %d (%a) %R')"
 
 countnewmail() {
     newmail="$(find ~/.mail/INBOX/new/ -type f  2> /dev/null | wc -l)"
-    [[ $newmail -gt 0 ]] && echo $newmail && exit
+    [[ $newmail -gt 0 ]] && echo " "$newmail && exit
 }
 
 pastatusvol() {
@@ -26,6 +26,6 @@ pastatusmic() {
     echo m:$(pamixer --default-source  --get-volume)%;
 }
 
-xsetroot -name "$MPC| $CPU $MEM $TEMP | $BATT0 $BATT1 | $(pastatusmic) $(pastatusvol) | $LOCALTIME [$XKBL] $(countnewmail)"
+xsetroot -name "$MPC| $CPU $MEM $TEMP | $BATT0 $BATT1 | $(pastatusmic) $(pastatusvol) | $LOCALTIME [$XKBL]$(countnewmail)"
 
 exit 0
