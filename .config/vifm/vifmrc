@@ -318,6 +318,9 @@ fileviewer *.ods,*.odp,*.pptx file %c
 " PCAP files
 filetype *.pcap wireshark-gtk %f
 
+" Text files
+filextype *.* nvim %c
+
 " Directories
 filextype */
         \ {View in thunar}
