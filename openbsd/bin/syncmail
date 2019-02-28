@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+export DISPLAY=:0.0
+
+ping -q -c 1 1.1.1.1 > /dev/null 2>&1 || exit
+
+mbsync -a >/dev/null 2>&1
+
+newmail="$(find $HOME/.mail/*/new/ -type f  2> /dev/null | wc -l | tr -d ' ')"
+
+[[ $newmail -gt 0 ]] && pgrep -x dunst >/dev/null && notify-send -i mail-unread "You have new mail: $newmail"
+

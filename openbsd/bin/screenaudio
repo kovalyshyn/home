@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while [[ -f $HOME/media/audio$n.wav ]]
+do
+    n=$((n+1))
+done
+filename="$HOME/media/audio$n.wav"
+
+aucat -o $filename
+

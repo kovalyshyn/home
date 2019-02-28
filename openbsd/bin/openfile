@@ -1,0 +1,9 @@
+#!/bin/sh
+
+chosen=$(find ~/*/ -type f | dmenu -i -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+
+[ "$chosen" != "" ] || exit
+
+xdg-open "$chosen" >/dev/null 2>&1 &
+
+exit 0

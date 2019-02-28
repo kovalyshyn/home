@@ -1,10 +1,14 @@
-# Linux dotfiles
+# Home dotfiles
 
 There are my dotfiles!
 
-## dwm
+## cwm @ OpenBSD
 
-![My Arch Linux](http://pub.webitel.com/_/wRm5MpMg1NvgWtF0bdYQ70nps4T9fq.png)
+![ThinPad X240](https://www.kovalyshyn.pp.ua/assets/posts/2019-02-22_18-51-00_screenshot.png)
+
+## dwm @ Arch Linux
+
+![My work machine](http://pub.webitel.com/_/wRm5MpMg1NvgWtF0bdYQ70nps4T9fq.png)
 
 ### additional settings
 

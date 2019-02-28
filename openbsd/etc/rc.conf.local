@@ -1,0 +1,7 @@
+ntpd_flags="-s"
+apmd_flags="-A -Z 6"
+pkg_scripts=messagebus avahi_daemon
+xenodm_flags=YES
+multicast=YES
+sshd_flags=NO
+slaacd_flags=NO
