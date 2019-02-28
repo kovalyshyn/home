@@ -7,7 +7,8 @@ done
 filename="$HOME/media/screencast$n.mkv"
 
 ffmpeg -y \
-    -f sndio -i snd/0 \
+    -thread_queue_size 1024 \
+    -f sndio -i rsnd/0 \
     -f x11grab -r 60 \
     -s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
     -i :0 -c:v libx264rgb -crf 0 -preset ultrafast -c:a flac \
