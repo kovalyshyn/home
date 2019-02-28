@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "webitel-phone",   NULL, NULL,           0,     1,       1,      -1 },
 	{ "TelegramDesktop", NULL, NULL,      1 << 1,     0,       0,      -1 },
 	{ NULL,       NULL,     "tmuxdd",          0,     1,       1,      -1 },
+	{ NULL,       NULL,     "cmixer",          0,     1,       1,      -1 },
 	{ NULL,       NULL,    "pamixer",          0,     1,       1,      -1 },
 	{ NULL,       NULL,    "ncmpcpp",          0,     1,       1,      -1 },
 	{ NULL, "transmission-gtk", NULL,          0,     0,       1,      -1 },
@@ -73,10 +74,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_black, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "xterm", NULL };
-static const char *vold[] = { "pamixer", "-d", "5", NULL };
-static const char *volu[] = { "pamixer", "-i", "5", NULL };
-static const char *mute[] = { "pamixer", "-t", NULL };
-static const char *micm[] = { "pamixer", "--default-source", "-t", NULL };
 static const char *play[] = { "mpc", "toggle", NULL };
 static const char *next[] = { "mpc", "next", NULL };
 static const char *prev[] = { "mpc", "prev", NULL };
@@ -93,11 +90,11 @@ static const char *drec[] = { "dmenurecord", NULL };
 static const char *tmux[] = { "dwmruntmux", NULL };
 static const char *dmopen[] = { "dmenuopen", NULL };
 static const char *webcam[] = { "webcam", NULL };
+static const char *xkbmap[] = { "changexkbmap", NULL };
 static const char *ncmpcpp[] = { "dwmrunmpc", NULL };
 static const char *pamixer[] = { "dwmrunpamixer", NULL };
 static const char *telegram[] = { "telegram-desktop", NULL };
 static const char *savexclip[] = { "savexclip", NULL };
-
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -119,7 +116,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
@@ -127,6 +123,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_space,  spawn,          {.v = xkbmap } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = savexclip } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = telegram } },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = brws } },
@@ -137,21 +134,17 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = ncmpcpp } },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          {.v = dmopen } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcam } },
-    {0,                 XF86XK_AudioLowerVolume,    spawn,          {.v = vold } },
-    {0,                 XF86XK_AudioRaiseVolume,    spawn,          {.v = volu } },
-    {0,                 XF86XK_AudioMute,           spawn,          {.v = mute } },
-    {0,                 XF86XK_AudioMicMute,        spawn,          {.v = micm } },
     {0,                 XF86XK_AudioPlay,           spawn,          {.v = play } },
     {0,                 XF86XK_AudioNext,           spawn,          {.v = next } },
     {0,                 XF86XK_AudioPrev,           spawn,          {.v = prev } },
     {0,                 XF86XK_AudioStop,           spawn,          {.v = stop } },
-    {0,                 XF86XK_MonBrightnessUp,     spawn,          {.v = bklu } },
     {0,                 XF86XK_Display,             spawn,          {.v = disp } },
     {0,                 XF86XK_Explorer,            spawn,          {.v = dmenucmd } },
     {0,                 XK_Print,                   spawn,          {.v = prts } },
     {MODKEY|ShiftMask,  XK_Print,                   spawn,          {.v = prtw } },
     {MODKEY,            XK_Print,                   spawn,          {.v = drec } },
-{0, XF86XK_MonBrightnessDown, spawn, {.v = bkld } },
+    {0,                 XF86XK_MonBrightnessDown,   spawn,          {.v = bkld } },
+    {0,                 XF86XK_MonBrightnessUp,     spawn,          {.v = bklu } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
