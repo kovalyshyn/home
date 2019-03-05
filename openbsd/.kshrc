@@ -21,6 +21,7 @@ case "$(id -u)" in
 esac
 PS1='$_PS1_COLOR[$_PS1_CLEAR$_PS1_BLUE\w$_PS1_COLOR]\$$_PS1_CLEAR '
 
+# aliases
 if command -v colorls > /dev/null ; then
   LS='colorls'
 else
@@ -30,24 +31,27 @@ alias vi="nvim"
 alias ls="$LS -FHh"
 alias ll="$LS -FHhl"
 alias la="$LS -FHhlA"
-alias ..='cd ..'
-alias ...='cd ...'
 alias tree="colortree -FANh"
 alias mkd='mkdir -p'
 alias df='df -h'
 alias du='du -ch'
-command -v neomutt > /dev/null && alias mutt='neomutt'
+alias mx="mutt w"
 alias ipp="dig +short myip.opendns.com @resolver1.opendns.com"
 alias clr='clear;echo "Currently logged in on $(tty), as $USER in directory $PWD."'
-alias yt="youtube-dl --add-metadata -ic"
+alias yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="yt -x -f bestaudio/best"
 alias wttr_lv='curl wttr.in/~Lviv'
 alias psref="gpg-connect-agent RELOADAGENT /bye"
 alias sensors="sysctl hw.sensors"
+alias sdn="doas shutdown -p now"
 alias sv="doas nvim"
 alias x="sxiv"
 
 # autocompletion for pass
 set -A complete_pass ls rm mv cp git show insert edit find $(cd /home/samael/.password-store/; find * -name '*.gpg' | sed -ne 's/^\(.*\)\.gpg$/\1/p')
 
-
+# functions
+lf() { fzf | xargs -r -I % xdg-open % ;}
+h() { $(cat ${HISTFILE} | fzf --tac --no-sort) ;}
+ce() { du -a ~/.config/* ~/.local/share/* | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
+docs() { du -a ~/docs/* | awk '{print $2}' | fzf | xargs -r $EDITOR ;}

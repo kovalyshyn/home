@@ -2,8 +2,8 @@ export PATH=$HOME/bin:$PATH
 
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="chrome"
 export READER="zathura"
+export BROWSER="chrome"
 export CLICOLOR=1
 export PAGER=less
 export LESS='-iMRS -x2'
@@ -35,7 +35,7 @@ xset b off
 #setxkbmap -option ctrl:nocaps
 
 # mute microphone
-mixerctl record.volume.mute=on
+mixerctl record.volume.mute=on > /dev/null 2>&1
 
 # if you have a ThinkPad, the following lines enable TrackPoint
 # deactivate touchpad
