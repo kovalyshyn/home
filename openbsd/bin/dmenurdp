@@ -1,0 +1,11 @@
+#!/bin/sh
+
+x=$(pgrep xfreerdp | wc -l)
+[  $x -gt 0 ] && response=$(echo -e "No\nYes" | dmenu -i -p "RDP still active. Close connection?" -fn "Mono:size=12" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019") && [ "$response" = "Yes" ] && pkill xfreerdp && exit
+
+ RDP=$(cut -d "|" -f 1 ~/docs/.rdp | dmenu -i -p "connect to: $1" -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+[ "$RDP" != "" ] || exit
+PC=$(grep "$RDP" ~/docs/.rdp| cut -d "|" -f 2)
+xfreerdp $PC >/dev/null 2>&1 &
+
+exit 0

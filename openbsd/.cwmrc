@@ -2,7 +2,7 @@
 sticky yes
 # snap windows to edges at 4 pixels distance
 snapdist 4
-# leave a gap for xclock
+# leave a gap
 gap 0 0 0 0
 
 # colors
@@ -40,10 +40,8 @@ bind-key M-Tab window-cycle
 # mod/alt + shift + tab = same thing in reverse
 bind-key 4S-Tab window-rcycle
 bind-key MS-Tab window-rcycle
-# mod + q = kill window
-bind-key 4-q window-delete
-# mod + w = close window
-bind-key 4-w window-close
+# mod + q = quit window
+bind-key 4-q window-close
 # set a window's label
 bind-key 4-n window-menu-label
 
@@ -119,8 +117,13 @@ bind-key 4-d 'dmenu_run -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2
 bind-key 4-question menu-exec
 # mod + . = show popup menu of known ssh hosts to connect to
 bind-key 4-period menu-ssh
-# mod + b = Browser
-bind-key 4-b dmenubrowser
+
+# mod + Shift + f = Firefox
+bind-key 4S-f firefox
+# mod + Shift + b = Browser
+bind-key 4S-b dmenubrowser
+# mod + Shift + s = Skype
+bind-key 4S-s "chrome --app=https://preview.web.skype.com/"
 
 # mod + shift + o = Open file
 bind-key 4S-o openfile
@@ -154,10 +157,10 @@ bind-mouse 4-2 window-lower
 bind-mouse 4S-2 window-hide
 
 # these commands will appear in the command menu
-command chrome "chrome --enable-unveil"
+command display displayselect
 command emoji dmenuunicode
+command passwords dmenupass
 command rclone dmenurclone
-command pass dmenupass
-command wireshark wireshark-gtk
 command webcam webcam
 command xcalc  xcalc
+command xfreerdp dmenurdp

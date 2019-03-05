@@ -46,8 +46,9 @@ morescreen() { # If multi-monitor is selected and there are more than two screen
 multimon() { # Multi-monitor handler.
 	case "$(echo "$screens" | wc -l)" in
 		1) xrandr $(echo "$allposs" | awk '{print "--output", $1, "--off"}' | tr '\n' ' ') ;;
-		2) twoscreen ;;
-		*) morescreen ;;
+		*) twoscreen ;;
+# bug
+#		*) morescreen ;;
 	esac ;}
 
 # Get all possible displays
@@ -65,6 +66,6 @@ case "$chosen" in
 esac
 
 # Restart dunst to ensure proper location on screen
-pgrep -x dunst >/dev/null && killall dunst && setsid dunst &
+pgrep -x dunst >/dev/null && pkill dunst && dunst &
 
 exit 0
