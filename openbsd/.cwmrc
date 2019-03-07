@@ -156,10 +156,13 @@ bind-mouse 4-2 window-lower
 # mod + shift + middle click = hide window
 bind-mouse 4S-2 window-hide
 
+# Autogroup definitions
+autogroup 2 "chromium-browser"
+
 # these commands will appear in the command menu
 command display displayselect
 command emoji dmenuunicode
-command passwords dmenupass
+command pass dmenupass
 command rclone dmenurclone
 command webcam webcam
 command xcalc  xcalc

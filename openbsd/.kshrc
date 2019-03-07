@@ -4,6 +4,7 @@ export LESS='-iMRS -x2'
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export CLICOLOR=1
+export FZF_DEFAULT_OPTS="--color=dark,hl:208,fg+:235,bg+:166,hl+:223,info:208,border:234"
 
 HISTFILE=$HOME/.ksh_history
 HISTSIZE=20000
@@ -40,6 +41,7 @@ alias ipp="dig +short myip.opendns.com @resolver1.opendns.com"
 alias clr='clear;echo "Currently logged in on $(tty), as $USER in directory $PWD."'
 alias yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="yt -x -f bestaudio/best"
+alias mpa="mpv --no-audio-display --script=$HOME/bin/mpa.lua"
 alias wttr_lv='curl wttr.in/~Lviv'
 alias psref="gpg-connect-agent RELOADAGENT /bye"
 alias sensors="sysctl hw.sensors"
