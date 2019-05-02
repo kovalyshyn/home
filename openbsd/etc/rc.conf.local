@@ -1,7 +1,8 @@
-ntpd_flags="-s"
-apmd_flags="-A -Z 6"
-pkg_scripts=messagebus avahi_daemon
-xenodm_flags=YES
+apmd_flags="-A -z 8"
 multicast=YES
-sshd_flags=NO
+ntpd_flags="-s"
+pkg_scripts=messagebus avahi_daemon cupsd
 slaacd_flags=NO
+sndiod_flags="-w off"
+sshd_flags=NO
+xenodm_flags=YES

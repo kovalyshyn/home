@@ -1,37 +1,40 @@
-ImageMagick-6.9.10.26 image processing tools
-ansible-2.7.8       ssh based config management framework
-chromium-72.0.3626.121 Chromium browser
+ImageMagick-6.9.10.36 image processing tools
+ansible-2.7.9p1     ssh based config management framework
+baresip-0.5.11p0    modular SIP User-Agent with audio and video support
+chromium-74.0.3729.108p0 Chromium browser
 colorls-6.3         ls(1) that can use color to display file attributes
 dmenu-4.9           dynamic menu for X11
 dunst-1.3.2         customizable and lightweight notification-daemon
-firefox-65.0.1      Mozilla web browser
 freerdp-2.0.0rc1p4  client for Microsoft RDP (remote desktop protocol)
 fzf-0.17.5          command-line fuzzy finder
+hplip-3.19.1        HP Linux Imaging and Printing
 intel-firmware-20180807p0v0 microcode update binaries for Intel CPUs
 inteldrm-firmware-20181218 firmware binary images for inteldrm(4) driver
 isync-1.3.0p5       synchronize IMAP4 and maildir mailboxes
 iwm-firmware-0.20170105 firmware binary images for iwm(4) driver
 jq-1.6              lightweight and flexible command-line JSON processor
-libreoffice-6.2.0.3p0v0 multi-platform productivity suite
+libnotify-0.7.8     send desktop notifications to a notification daemon
+libreoffice-6.2.3.2p1v0 multi-platform productivity suite
 mpv-0.29.1          movie player based on MPlayer/mplayer2
-neofetch-6.0.0p0    system information tool written in bash
-neomutt-20180716p0-gpgme tty-based e-mail client, Mutt with patches
-neovim-0.3.1p1      continuation and extension of Vim
-newsboat-2.14.1     RSS/Atom feed reader for text terminals
+neomutt-20180716p0  tty-based e-mail client, Mutt with patches
+neovim-0.3.4        continuation and extension of Vim
+newsboat-2.15       RSS/Atom feed reader for text terminals
 password-store-1.7.3 simple password store
-quirks-3.106        exceptions to pkg_add rules
-rclone-1.46         rsync for cloud storage
-rtorrent-0.9.6p5v0  ncurses BitTorrent client based on libTorrent
+quirks-3.134        exceptions to pkg_add rules
+rclone-1.47.0       rsync for cloud storage
+rtorrent-0.9.6p7v0  ncurses BitTorrent client based on libTorrent
 sct-0.4             set the color temperature of the screen
 simple-mtpfs-0.3.0p1 MTP device filesystem
+sipcalc-1.1.6       ipv4 and ipv6 subnet calculator
 sxiv-24p2           simple X Image Viewer
-tshark-3.0.0        network protocol analyzer
+tshark-3.0.1        network protocol analyzer
 unclutter-8p1       hides idle X11 cursor
 unzip-6.0p11-iconv  extract, list & test files in a ZIP archive
 urlview-0.9p7       curses-based URL ripper
 uvideo-firmware-1.2p2 firmware binary images for uvideo(4) driver
-wireshark-3.0.0p0   graphical network protocol analyzer, Qt user-interface
-youtube-dl-2019.01.17 CLI program to download videos from YouTube and other sites
-zathura-0.4.0       document viewer for PDF and other formats with a vi-like UI
+w3m-0.5.3p7-image   pager/text-based web browser
+wireshark-3.0.1     graphical network protocol analyzer, Qt user-interface
+youtube-dl-2019.04.24p0 CLI program to download videos from YouTube and other sites
+zathura-0.4.3       document viewer for PDF and other formats with a vi-like UI
 zathura-djvu-0.2.8p0 djvu plugin for zathura
 zathura-pdf-mupdf-0.3.4 mupdf pdf plugin for zathura

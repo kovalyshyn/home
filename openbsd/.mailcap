@@ -1,0 +1,7 @@
+text/plain; $EDITOR %s;
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+image/*; sxiv %s &; copiousoutput;
+video/*; mpv --quiet %s &; copiousoutput;
+audio/*; mpv --quiet %s &; copiousoutput;
+application/pdf; $READER %s &; copiousoutput;
+application/pgp-encrypted; gpg -d '%s'; copiousoutput;

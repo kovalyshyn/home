@@ -66,6 +66,6 @@ case "$chosen" in
 esac
 
 # Restart dunst to ensure proper location on screen
-pgrep -x dunst >/dev/null && pkill dunst && dunst &
+# pgrep -x dunst >/dev/null && pkill dunst && dunst &
 
 exit 0

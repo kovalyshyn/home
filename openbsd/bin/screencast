@@ -1,5 +1,7 @@
 #!/bin/sh
 
+doas sysctl kern.audio.record=1
+
 while [[ -f $HOME/media/screencast$n.mkv ]]
 do
     n=$((n+1))

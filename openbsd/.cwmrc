@@ -6,8 +6,8 @@ snapdist 4
 gap 0 0 0 0
 
 # colors
-color    activeborder   "#ebdbb2"
-color    inactiveborder "#32302f"
+color    inactiveborder  "#282828"
+color    activeborder "#fbf1c7"
 
 # set font for menus
 fontname "mono:pixelsize=13:style=semicondensed"
@@ -24,7 +24,7 @@ unbind-key all
 # mod + enter = new xterm
 bind-key 4-Return terminal
 # ctrl + alt + L = lock screen (xlock)
-bind-key CM-l lock
+bind-key CM-l xlock
 # mod + backspace = hide window
 bind-key 4-BackSpace window-hide
 # mod + space = change xkb layout
@@ -78,8 +78,8 @@ bind-key 4-g window-group
 bind-key 4-Right group-cycle
 # mod + left arrow = same thing in reverse
 bind-key 4-Left group-rcycle
-# mod + S = stick current window to be visible in all groups
-bind-key 4-s window-stick
+# mod + Shift + S = stick current window to be visible in all groups
+bind-key 4S-s window-stick
 
 # mod + F = make current window fullscreen
 bind-key 4-f window-fullscreen
@@ -104,8 +104,8 @@ bind-key 4S-l window-resize-right-big
 
 # mod + V = tile windows vertically, current window to the left
 bind-key 4-v window-vtile
-# mod + V = tile windows horizontally, current window to the top
-bind-key 4-c window-htile
+# mod + S = tile windows horizontally, current window to the top
+bind-key 4-s window-htile
 
 # mod + / = show popup menu of current windows
 bind-key 4-slash menu-window
@@ -113,26 +113,22 @@ bind-key 4-slash menu-window
 bind-key 4-r menu-cmd
 # mod + d = dmenu
 bind-key 4-d 'dmenu_run -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019"'
-# mod + ? = show popup menu to run an arbitrary command
-bind-key 4-question menu-exec
-# mod + . = show popup menu of known ssh hosts to connect to
-bind-key 4-period menu-ssh
 
-# mod + Shift + f = Firefox
-bind-key 4S-f firefox
-# mod + Shift + b = Browser
+# mod + Shift + c = Chrome
+bind-key 4S-c chrome
+# mod + Shift + b = Browser (dmenu)
 bind-key 4S-b dmenubrowser
-# mod + Shift + s = Skype
-bind-key 4S-s "chrome --app=https://preview.web.skype.com/"
 
+# mod + u = tmux
+bind-key 4-u 'xterm -g 95x33 tmuxdd'
+# mod + Shift + v = vifm
+bind-key 4S-v 'xterm -g 95x33 vifm'
 # mod + shift + o = Open file
 bind-key 4S-o openfile
-# mod + u = tmux
-bind-key 4-u '/home/samael/bin/st -g 95x33 tmuxdd'
 
 # Screenshot + Screencast
-bind-key Print "screenpng Downloads/screenshots/"
-bind-key 4S-Print "screenpng -s Downloads/screenshots/"
+bind-key Print "screenpng pics/screenshots/"
+bind-key 4S-Print "screenpng -s pics/screenshots/"
 bind-key 4-Print dmenurecord
 
 # mod + shift + R = restart cwm, reloading configuration
@@ -157,13 +153,15 @@ bind-mouse 4-2 window-lower
 bind-mouse 4S-2 window-hide
 
 # Autogroup definitions
-autogroup 2 "chromium-browser"
+#autogroup 2 "Navigator,Firefox"
 
 # these commands will appear in the command menu
 command display displayselect
 command emoji dmenuunicode
 command pass dmenupass
 command rclone dmenurclone
+command networking dmenunet
 command webcam webcam
 command xcalc  xcalc
 command xfreerdp dmenurdp
+command ssh dmenussh

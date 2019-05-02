@@ -39,9 +39,10 @@ alias du='du -ch'
 alias mx="mutt w"
 alias ipp="dig +short myip.opendns.com @resolver1.opendns.com"
 alias clr='clear;echo "Currently logged in on $(tty), as $USER in directory $PWD."'
-alias yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'"
+alias yt="youtube-dl --add-metadata -i -o '%(title)s.%(ext)s'"
 alias yta="yt -x -f bestaudio/best"
 alias mpa="mpv --no-audio-display --script=$HOME/bin/mpa.lua"
+alias mpa_rnd="find ~/music -type f -print0 | sort -Rz | xargs -r0 mpv --no-audio-display --script=$HOME/bin/mpa.lua"
 alias wttr_lv='curl wttr.in/~Lviv'
 alias psref="gpg-connect-agent RELOADAGENT /bye"
 alias sensors="sysctl hw.sensors"

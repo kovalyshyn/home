@@ -1,5 +1,7 @@
 #!/bin/sh
 
+doas sysctl kern.audio.record=1
+
 while [[ -f $HOME/media/audio$n.wav ]]
 do
     n=$((n+1))

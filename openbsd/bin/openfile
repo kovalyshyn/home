@@ -1,8 +1,10 @@
 #!/bin/sh
 
-chosen=$(find ~/*/ -type f | dmenu -i -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+chosen=$(ls -1 ~/ | dmenu -i -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
 
 [ "$chosen" != "" ] || exit
+
+[ $(file $chosen | cut -f2 -d " ") = "directory" ] && chosen=$(find ~/$chosen/ -type f | dmenu -i -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
 
 xdg-open "$chosen" >/dev/null 2>&1 &
 

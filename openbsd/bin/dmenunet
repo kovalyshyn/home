@@ -1,0 +1,53 @@
+#!/usr/bin/env sh
+
+#ifconfig iwm0 scan | grep nwid | sed "/ HT.*//"
+
+if [ "${1}" ]; then
+    chosen=${1}
+else
+    command -v dmenu >/dev/null && chosen=$(printf "LAN\\nWiFi\\nLTE\\nlo" | dmenu -i -p "connect to: $1" -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019") || exit 1
+fi
+
+[ "$chosen" != "" ] || exit
+
+sid=$(ifconfig iwm0 | grep join | cut -f 3 -d " ")
+[[ -n $sid ]] && doas ifconfig iwm0 -join $sid >/dev/null 2>&1
+doas ifconfig iwm0 delete down >/dev/null 2>&1
+doas ifconfig em0 delete down >/dev/null 2>&1
+doas route -n flush >/dev/null 2>&1
+
+case $chosen in
+    "lo")
+        doas ifconfig umb0 down >/dev/null 2>&1
+        pgrep -x dunst >/dev/null && notify-send "localhost only!" &
+        ;;
+    "LAN")
+        doas ifconfig umb0 down >/dev/null 2>&1
+        doas sh /etc/netstart em0 >/dev/null 2>&1
+        pgrep -x dunst >/dev/null && notify-send "LAN" &
+        ;;
+    "LTE")
+        doas ifconfig umb0 apn internet
+        sleep 1
+        doas ifconfig umb0 up
+        doas sed -i "s/nameserver.*/nameserver 1.1.1.1/" /etc/resolv.conf
+        gw=$(ifconfig umb0 | grep inet | cut -d " " -f 4)
+        [[ -n $gw ]] && doas route add default $gw
+        net=$(ifconfig umb0 | grep speed)
+        pgrep -x dunst >/dev/null && notify-send "$net!" &
+        ;;
+    "WiFi")
+        doas ifconfig umb0 down >/dev/null 2>&1
+        doas sh /etc/netstart iwm0 >/dev/null 2>&1
+        sid=$(ifconfig iwm0 | grep join | cut -f 3 -d " ")
+        pgrep -x dunst >/dev/null && notify-send "$sid connected!" &
+        ;;
+    *)
+        doas sh /etc/netstart >/dev/null 2>&1
+        pgrep -x dunst >/dev/null && notify-send "Networking restarted!" &
+        ;;
+esac
+
+doas rcctl restart smtpd
+
+exit 0

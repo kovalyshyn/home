@@ -6,12 +6,12 @@ ping -q -c 1 1.1.1.1 > /dev/null 2>&1 || exit
 
 # Kovalyshyn
 mbsync -a -c $HOME/.config/mbsync/kovalyshyn >/dev/null 2>&1
-nmk="$(find $HOME/.mail/kovalyshyn/*/new/ -type f  2> /dev/null | wc -l | tr -d ' ')"
-[[ $nmk -gt 0 ]] && pgrep -x dunst >/dev/null && notify-send -i mail-unread "You have new mail: $nmk @kovalyshyn"
+nmk="$(find $HOME/mail/kovalyshyn/*/new/ -type f  2> /dev/null | wc -l | tr -d ' ')"
+[[ $nmk -gt 0 ]] && pgrep -x dunst >/dev/null && notify-send -i mail-unread "You have new mail: <b>$nmk</b><br /><i>kovalyshyn</i>"
 
 # Webitel
 mbsync -a -c $HOME/.config/mbsync/webitel >/dev/null 2>&1
-nmw="$(find $HOME/.mail/webitel/*/new/ -type f  2> /dev/null | wc -l | tr -d ' ')"
-[[ $nmw -gt 0 ]] && pgrep -x dunst >/dev/null && notify-send -i mail-unread "You have new mail: $nmw @webitel"
+nmw="$(find $HOME/mail/webitel/INBOX/new/ -type f  2> /dev/null | wc -l | tr -d ' ')"
+[[ $nmw -gt 0 ]] && pgrep -x dunst >/dev/null && notify-send -i mail-unread "You have new mail: <b>$nmw</b><br /><i>webitel</i>"
 
 exit
