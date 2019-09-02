@@ -3,8 +3,8 @@ export PATH=$HOME/bin:$PATH
 
 export EDITOR="nvim"
 export TERMINAL="xterm"
-export BROWSER="chrome"
 export READER="zathura"
+export BROWSER="firefox"
 export CLICOLOR=1
 export PAGER=less
 export LESS='-iMRS -x2'
@@ -32,17 +32,20 @@ xinput set-prop "/dev/wsmouse" "WS Pointer Wheel Emulation Inertia" 3
 # increase pointer speed
 xinput set-prop "/dev/wsmouse" "Device Accel Constant Deceleration" 0.4
 
-# set your background color
+# Set your background color
 xsetroot -solid "#1d2021"
-
+# Run xcompmgr
+#xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+# Set your background wallpaper
+xwallpaper --center $HOME/pics/openbsd-wallpaper-1920x1200.png
 # xidle will lock your display after a period of inactivity
-xidle -program "/home/samael/bin/myxlock" &
-
-# hide cursore
+xidle -program "$HOME/bin/myxlock" &
+# Hide cursore
 unclutter -root -idle 2 -noevents &
-
 # Run notification-daemon
 dunst &
+# etc
+#find $HOME/docs -type f | entr -r rclone sync $HOME/docs dropbox:Documents &
 
-# start cwm
+# Start cwm
 exec cwm

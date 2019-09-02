@@ -36,7 +36,6 @@ alias tree="colortree -FANh"
 alias mkd='mkdir -p'
 alias df='df -h'
 alias du='du -ch'
-alias mx="mutt w"
 alias ipp="dig +short myip.opendns.com @resolver1.opendns.com"
 alias clr='clear;echo "Currently logged in on $(tty), as $USER in directory $PWD."'
 alias yt="youtube-dl --add-metadata -i -o '%(title)s.%(ext)s'"
@@ -44,6 +43,7 @@ alias yta="yt -x -f bestaudio/best"
 alias mpa="mpv --no-audio-display --script=$HOME/bin/mpa.lua"
 alias mpa_rnd="find ~/music -type f -print0 | sort -Rz | xargs -r0 mpv --no-audio-display --script=$HOME/bin/mpa.lua"
 alias wttr_lv='curl wttr.in/~Lviv'
+alias wttr2_lv='curl v2.wttr.in/~Lviv'
 alias psref="gpg-connect-agent RELOADAGENT /bye"
 alias sensors="sysctl hw.sensors"
 alias sdn="doas shutdown -p now"
@@ -56,5 +56,4 @@ set -A complete_pass ls rm mv cp git show insert edit find $(cd /home/samael/.pa
 # functions
 lf() { fzf | xargs -r -I % xdg-open % ;}
 h() { $(cat ${HISTFILE} | fzf --tac --no-sort) ;}
-ce() { du -a ~/.config/* ~/.local/share/* | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
 docs() { du -a ~/docs/* | awk '{print $2}' | fzf | xargs -r $EDITOR ;}

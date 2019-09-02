@@ -22,7 +22,7 @@ unbind-key all
 # M = meta (alt)
 
 # mod + enter = new xterm
-bind-key 4-Return terminal
+bind-key 4-Return xterm #terminal
 # ctrl + alt + L = lock screen (xlock)
 bind-key CM-l xlock
 # mod + backspace = hide window
@@ -114,10 +114,14 @@ bind-key 4-r menu-cmd
 # mod + d = dmenu
 bind-key 4-d 'dmenu_run -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019"'
 
-# mod + Shift + c = Chrome
-bind-key 4S-c chrome
 # mod + Shift + b = Browser (dmenu)
 bind-key 4S-b dmenubrowser
+# mod + Shift + f = Firefox
+bind-key 4S-f firefox
+# mod + Shift + t = Thunderbird
+bind-key 4S-t thunderbird
+# mod + Shift + x = XFE
+bind-key 4S-x xfe
 
 # mod + u = tmux
 bind-key 4-u 'xterm -g 95x33 tmuxdd'
@@ -153,7 +157,7 @@ bind-mouse 4-2 window-lower
 bind-mouse 4S-2 window-hide
 
 # Autogroup definitions
-#autogroup 2 "Navigator,Firefox"
+autogroup 1 "Navigator,Firefox"
 
 # these commands will appear in the command menu
 command display displayselect
@@ -163,5 +167,7 @@ command rclone dmenurclone
 command networking dmenunet
 command webcam webcam
 command xcalc  xcalc
+command xfe  xfe
 command xfreerdp dmenurdp
+command xterm  xterm
 command ssh dmenussh
