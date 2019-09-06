@@ -1,0 +1,27 @@
+#!/bin/sh
+
+url="http://pub.webitel.com"
+
+if [ "${1}" ]; then
+    chosen=${1}
+else
+    command -v dmenu >/dev/null && chosen=$(find ~/pics -type f | dmenu -i -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019") || exit 1
+fi
+
+[ "$chosen" != "" ] || exit 1
+[ -f "$chosen" ] || exit 1
+
+bname=$(basename "$chosen")
+path=$(file -b --mime-type "$chosen")
+fname=$(openssl rand -hex 16).${bname##*.}
+
+ssh -p 44022 upld@cloud-ams1.webitel.com "/bin/sh -c 'mkdir -p ~/pub/'${path}'/'"
+scp -P 44022 -q "$chosen" upld@cloud-ams1.webitel.com:~/pub/$path/$fname
+
+msg="uploaded: $url/$path/$fname"
+pgrep -x dunst >/dev/null && notify-send "$msg" || echo "$msg"
+
+command -v pbcopy >/dev/null && echo $url/$path/$fname | pbcopy
+command -v xclip >/dev/null && echo $url/$path/$fname | xclip -selection clipboard
+
+exit 0

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pgrep tmuxdd || $TERMINAL -n tmuxdd -g 93x31 tmuxdd

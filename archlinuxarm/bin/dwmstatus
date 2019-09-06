@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CPU="$(top -bn1 | grep 'Cpu(s)' | sed 's/.*, *\([0-9.]*\)%* id.*/\1/' | awk '{print 100 - $1"%"}')"
+MEM="$(free -h |  awk '{if (NR==2) {print $3}}')"
+TEMP="$(( `cat /sys/class/thermal/thermal_zone0/temp` / 1000 ))°C"
+CPUFREQ="$(( `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq` / 1000 ))MHz"
+XKBL=$(setxkbmap -query | sed -rn "s/layout.*(..)/\1/p" | tr "[a-z]" "[A-Z]")
+LOCALTIME=$(date '+%b %d (%a) %R')
+MPC=$(mpc --host=10.10.10.8 -f "[[%artist% - ]%title%]|[%file%]" status | tr '\n' ' ' | grep -Po '.*(?=\[playing\])|paused' | tr -d '\n')
+
+xsetroot -name " $MPC| $CPU ($CPUFREQ) $MEM $TEMP | $LOCALTIME [$XKBL]"
+
+exit 0

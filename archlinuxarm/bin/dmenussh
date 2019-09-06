@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SSH=$(cut -d "|" -f 1 ~/docs/.ssh | dmenu -i -p "connect to: $1" -l 20 -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+[ "$SSH" != "" ] || exit
+PC=$(grep "$SSH" ~/docs/.ssh| cut -d "|" -f 2)
+$TERMINAL -g 95x33 -e $PC >/dev/null 2>&1 &
+
+exit 0

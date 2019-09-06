@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+if [ "${1}" ]; then
+    chosen=${1}
+else
+    command -v dmenu >/dev/null && chosen=$(printf "Up\\nDown" | dmenu -i -p "rclone sync: $1" -fn "Mono:size=10" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019") || exit 1
+fi
+
+[ "$chosen" != "" ] || exit
+
+case $chosen in
+    "Up")
+        pgrep -x dunst >/dev/null && notify-send "Uploading..." &
+        rclone sync ~/docs dropbox:Documents
+#        rclone sync ~/lib B2:kovalyshyn
+        ;;
+    "Down")
+        pgrep -x dunst >/dev/null && notify-send "Downloading..." &
+        rclone sync dropbox:Documents ~/docs
+        rclone sync dropbox:Apps/Unclutter\ Notes/Unclutter\ Notes ~/notes
+#        rclone sync B2:kovalyshyn ~/lib
+        ;;
+esac
+
+pgrep -x dunst >/dev/null && notify-send "Done!" &
+
+exit 0

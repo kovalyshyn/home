@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+if [ "${1:0:1}" == '-' ]; then
+    if [ "${1}" != '-s' ]; then
+        echo "error: unknown option ${1}" && exit 1
+    fi
+    base_folder="${2}"
+else
+    base_folder="${1}"
+    params="-window root"
+fi
+
+[[ -d ${base_folder} ]] || mkdir -p ${base_folder}
+
+file_path=${base_folder}$( date '+%Y-%m-%d_%H-%M-%S' )_screenshot.png
+import ${params} ${file_path}
+
+command -v pngquant && pngquant --ext .png -f ${file_path}
+
+xclip -selection clipboard -target image/png -i < ${file_path}
+pgrep -x dunst && notify-send "The screenshot is in the clipboard"
+
+exit 0

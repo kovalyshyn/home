@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=LibreOffice
+Exec=/usr/bin/libreoffice %u

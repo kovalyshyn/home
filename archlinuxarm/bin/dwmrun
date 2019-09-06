@@ -1,0 +1,9 @@
+#!/bin/bash
+
+chosen=$(sed "s/\s*#.*$//;/^\s*$/d" "$HOME/.dwmrun" | awk '{print $1}' | dmenu -i -p "Run: $1" -nb "#282828" -nf "#ebdbb2" -sb "#1d2021" -sf "#fe8019")
+
+[ "$chosen" != "" ] || exit
+
+$(sed -n "s/\s*#.*$//;/^\s*$/d;s/^${chosen}\s//p;" "$HOME/.dwmrun") 2>/dev/null
+
+exit 0
