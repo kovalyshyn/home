@@ -136,6 +136,9 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+" Print
+set printencoding=koi8-u
+
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -365,6 +368,10 @@ map <leader>jq <Esc>:%!jq .<CR>
 " Run current file in sent
 " F5
 map <F5> <Esc>:!sent %:p<CR>
+
+" Open postscript file in zathura
+" F6
+map <F6> <Esc>:w! <Esc><CR><Esc>:hardcopy >/tmp/p.ps<CR><Esc>:!zathura /tmp/p.ps&<CR><Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
