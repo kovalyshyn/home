@@ -12,8 +12,8 @@ shopt -s cmdhist # Make multi-line commandsline in history
 shopt -s cdspell # Correct dir spellings
 HISTSIZE= HISTFILESIZE= # Infinite history.
 
+export PATH=$HOME/bin:$PATH
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 6)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
-
 export GPG_TTY=$(tty)
 
 # Some aliases

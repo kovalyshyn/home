@@ -13,7 +13,7 @@ export LESS='-iMRS -x2'
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-# specify location of kshrc
+# specify location of bashrc
 export ENV=$HOME/.bashrc
 
 # load Xresources file

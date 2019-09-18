@@ -371,7 +371,7 @@ map <F5> <Esc>:!sent %:p<CR>
 
 " Open postscript file in zathura
 " F6
-map <F6> <Esc>:w! <Esc><CR><Esc>:hardcopy >/tmp/p.ps<CR><Esc>:!zathura /tmp/p.ps&<CR><Esc>
+map <F6> <Esc>:w!<CR><Esc>:hardcopy >/tmp/p.ps<CR><Esc>:!zathura /tmp/p.ps&<CR><Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
