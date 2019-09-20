@@ -12,6 +12,7 @@ dialog
 diffutils
 dmenu
 dunst
+exfat-utils
 fakeroot
 file
 firefox
@@ -30,7 +31,6 @@ inetutils
 inxi
 iproute2
 iputils
-iw
 iwd
 jfsutils
 jq
@@ -110,3 +110,4 @@ youtube-dl
 zathura
 zathura-djvu
 zathura-pdf-mupdf
+zathura-ps
