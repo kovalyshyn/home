@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/bin/bash
 export PATH=$HOME/bin:$PATH
 
 export EDITOR="nvim"
@@ -28,7 +28,7 @@ xsetroot -solid "#1d2021"
 # Set your background wallpaper
 xwallpaper --center $HOME/pics/raspberry-pi-wallpapers-1920x1080.jpg
 # Hide cursore
-unclutter -root -idle 2 -noevents &
+unclutter -root -idle 3 -noevents &
 # Run notification-daemon
 dunst &
 # Turns NumLock on in X

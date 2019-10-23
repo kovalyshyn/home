@@ -7,8 +7,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "mono:pixelsize=12:antialias=true:autohint=true" };
-static const char dmenufont[]       = "mono:pixelsize=12:antialias=true:autohint=true";
+static const char *fonts[]          = { "mono:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "mono:pixelsize=14:antialias=true:autohint=true";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#504945";
 static const char col_gray3[]       = "#ebdbb2";
