@@ -33,8 +33,9 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       1 << 4,     1,       1,      -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 0,     0,       0,      -1 },
 	{ "linphone", NULL,       NULL,            0,     1,       1,      -1 },
-	{ "webitel-phone",   NULL, NULL,           0,     1,       1,      -1 },
 	{ "TelegramDesktop", NULL, NULL,      1 << 1,     0,       0,      -1 },
+	{ "Skype",    NULL,        NULL,           0,     1,       1,      -1 },
+	{ "webitel-phone",   NULL, NULL,           0,     1,       1,      -1 },
 	{ NULL,       NULL,     "tmuxdd",          0,     1,       1,      -1 },
 	{ NULL,     NULL, "video0 - mpv",          0,     0,       1,      -1 },
 };

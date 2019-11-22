@@ -25,6 +25,8 @@ xset b off
 
 # Set your background color
 xsetroot -solid "#1d2021"
+# Run xcompmgr
+#xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 # Set your background wallpaper
 xwallpaper --center $HOME/pics/raspberry-pi-wallpapers-1920x1080.jpg
 # Hide cursore
@@ -34,7 +36,7 @@ dunst &
 # Turns NumLock on in X
 numlockx on &
 # Pi4 outputs audio over the 3.5mm audio port
-amixer cset numid=3 2 &
+#amixer cset numid=3 2 &
 
 # Start dwm
 while true
